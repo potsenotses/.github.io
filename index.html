@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>My Personal Finance Tracker</h2>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showTab('input')">Input Expense/Income</a></li>
+                <li><a href="#" onclick="showTab('spreadsheet')">Spreadsheet</a></li>
+            </ul>
+        </nav>
+        <div id="input" class="tab-content active">
+            <form id="form">
+                <div class="form-control">
+                    <label for="who">Who?</label>
+                    <select id="who">
+                        <option value="Elise">Elise</option>
+                        <option value="Wout">Wout</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="date">Date</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-control">
+                    <label for="category">Category</label>
+                    <select id="category">
+						<option value="" disabled selected>kies een soort</option>
+                        <option value="Abonnementen">Abonnementen</option>
+						<option value="Apotheek">Apotheek</option>
+                        <option value="Belastingen">Belastingen</option>
+						<option value="Cadeaus">Cadeaus</option>
+						<option value="Café">Café</option>
+						<option value="Dokter">Dokter</option>
+						<option value="Elektriciteit">Elektriciteit</option>
+						<option value="Eten">Eten</option>
+						<option value="Honden">Honden</option>
+						<option value="Huishoudelijk">Huishoudelijk</option>
+						<option value="Internet">Internet</option>
+						<option value="Mobiel">Mobiel</option>
+						<option value="Reizen">Reizen</option>
+						<option value="Restaurant">Restaurant</option>
+						<option value="Shopping">Shopping</option>
+						<option value="Sport">Sport</option>
+						<option value="Tanken">Tanken</option>
+						<option value="Verwarming">Verwarming</option>
+						<option value="Verzekering">Verzekering</option>
+						<option value="Water">Water</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="Enter amount...">
+                </div>
+                <div class="form-control">
+                    <label for="comment">Comment</label>
+                    <input type="text" id="comment" placeholder="Enter comment...">
+                </div>
+                <button type="button" class="btn" onclick="addTransaction()">Add transaction</button>
+            </form>
+        </div>
+        <div id="spreadsheet" class="tab-content" style="display:none;">
+            <table id="spreadsheet-table">
+                <thead>
+                    <tr>
+                        <th>Wie?</th>
+                        <th>Datum</th>
+                        <th>Soort uitgave</th>
+                        <th>Bedrag</th>
+                        <th>Opmerking</th>
+                    </tr>
+                </thead>
+                <tbody id="spreadsheet-body">
+                    <!-- Rows will be added here dynamically -->
+                </tbody>
+            </table>
+            <button id="export-btn" class="btn">Export to CSV</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
